@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Tracker</title>
+
+    <!-- daisyUi -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- font awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            font-family: "Geist", sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-[#F8FAFC]">
+    <div class="container mx-auto min-h-screen md:pt-12 py-8 sm:space-y-7 space-y-5">
+        <section class="flex flex-col gap-5 px-4 lg:px-0">
+            <h1 class="text-[#002C5C] font-bold sm:text-3xl text-2xl">Job Application Tracker</h1>
+
+            <!-- overview card group -->
+            <div class="flex flex-col sm:flex-row gap-4">
+                <!-- card 1 -->
+                <div class="card w-full bg-base-100 sm:card-md card-sm shadow-sm">
+                    <div class="card-body">
+                        <p class="text-sm font-medium text-[#323B49]">Total</p>
+                        <h2 id="all-count" class="font-bold text-2xl text-[#002C5C]">8</h2>
+                    </div>
+                </div>
+
+                <!-- card 2 -->
+                <div class="card w-full bg-base-100 sm:card-md card-sm shadow-sm">
+                    <div class="card-body">
+                        <p class="text-sm font-medium text-[#323B49]">Interview</p>
+                        <h2 id="interview-count" class="font-bold text-2xl text-[#10B981]">8</h2>
+                    </div>
+                </div>
+
+                <!-- card 3 -->
+                <div class="card w-full bg-base-100 sm:card-md card-sm shadow-sm">
+                    <div class="card-body">
+                        <p class="text-sm font-medium text-[#323B49]">Rejected</p>
+                        <h2 id="rejected-count" class="font-bold text-2xl text-[#EF4444]">8</h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider mx-4 lg:mx-0"></div>
+
+        <section class="mx-4 lg:mx-0">
+            <div class="flex items-center justify-between">
+                <h3 class="text-[#002C5C] font-semibold sm:text-xl text-base">Available Jobs</h3>
+                <p id="jobs-section-count" class="text-[#64748B] text-base font-medium"><span id="total-jobs">8</span>
+                    jobs</p>
+            </div>
+
+            <!-- filter button tab group -->
+            <div id="filter-button-container" class="mt-6 mb-4 flex flex-wrap gap-2">
+                <!-- all filter button -->
+                <button onclick="toggleStyle('all-filter-btn')" id="all-filter-btn"
+                    class="w-20 text-xs font-semibold btn border-none btn-active bg-[#3B82F6] text-white">All</button>
+                <!-- interview filter button -->
+                <button onclick="toggleStyle('interview-filter-btn')" id="interview-filter-btn"
+                    class="w-20 text-xs font-medium btn bg-white text-[#64748B]">Interview</button>
+                <!-- rejected filter button -->
+                <button onclick="toggleStyle('rejected-filter-btn')" id="rejected-filter-btn"
+                    class="w-20 text-xs font-medium btn bg-white text-[#64748B]">Rejected</button>
+            </div>
+
+            <!-- filtered section -->
+            <section id="filtered-section" class="hidden space-y-4"></section>
+
+            <!-- job list container div -->
+            <div id="job-container" class="space-y-4"></div>
+        </section>
+    </div>
+
+    <script src="./scripts/script.js"></script>
+</body>
+
+</html>
