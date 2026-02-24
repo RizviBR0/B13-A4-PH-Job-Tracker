@@ -1,4 +1,4 @@
-// overview counts elements
+// overview count elements
 const totalCount = document.getElementById("all-count");
 const interviewCount = document.getElementById("interview-count");
 const rejectedCount = document.getElementById("rejected-count");
@@ -13,7 +13,7 @@ const jobListContainer = document.getElementById("job-container");
 // filtered section
 const filteredSection = document.getElementById("filtered-section");
 
-// an array of 8 job object
+// an array of 8 job objects
 let jobsData = [
   {
     id: 1,
@@ -297,9 +297,9 @@ function renderInterview() {
                         </p>
                     </div>
 
-                    <div class="space-x-2">
-                        <button class="interview-btn btn btn-outline btn-success">INTERVIEW</button>
-                        <button class="rejected-btn btn btn-outline btn-error">REJECTED</button>
+                    <div class="sm:space-x-2 space-x-0 space-y-3 sm:space-y-0">
+                        <button class="interview-btn w-full sm:w-fit btn btn-outline btn-success">INTERVIEW</button>
+                        <button class="rejected-btn btn w-full sm:w-fit btn-outline btn-error">REJECTED</button>
                     </div>
                 </div>`;
     filteredSection.innerHTML += interviewCard;
@@ -345,9 +345,9 @@ function renderRejected() {
                         </p>
                     </div>
 
-                    <div class="space-x-2">
-                        <button class="interview-btn btn btn-outline btn-success">INTERVIEW</button>
-                        <button class="rejected-btn btn btn-outline btn-error">REJECTED</button>
+                    <div class="sm:space-x-2 space-x-0 space-y-3 sm:space-y-0">
+                        <button class="interview-btn w-full sm:w-fit btn btn-outline btn-success">INTERVIEW</button>
+                        <button class="rejected-btn btn w-full sm:w-fit btn-outline btn-error">REJECTED</button>
                     </div>
                 </div>`;
     filteredSection.innerHTML += rejectedCard;
